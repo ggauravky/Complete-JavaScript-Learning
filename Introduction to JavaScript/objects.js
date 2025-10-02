@@ -1,0 +1,70 @@
+// object literal syntax
+let person = {
+    name: 'John',
+    age: 30,
+    isEmployed: true,
+    greet: function () {
+        return 'Hello, my name is ' + this.name;
+    }
+};
+
+console.log(person);
+console.log(person.name); // accessing property
+console.log(person['age']); // accessing property using bracket notation
+console.log(person.greet()); // calling method
+
+// adding new property
+person.city = 'New York';
+console.log(person);
+
+// modifying property
+person.age = 31;
+console.log(person);
+
+// deleting property
+delete person.isEmployed;
+console.log(person);
+
+// nested object
+let student = {
+    name: 'Alice',
+    marks: {
+        math: 90,
+        science: 85,
+        english: 88
+    }
+};
+console.log(student);
+console.log(student.marks.math); // accessing nested property
+
+// object constructor syntax
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.getInfo = function () {
+        return this.year + ' ' + this.make + ' ' + this.model;
+    };
+}
+
+let car1 = new Car('Toyota', 'Camry', 2020);
+let car2 = new Car('Honda', 'Civic', 2019);
+
+console.log(car1);
+console.log(car1.getInfo());
+console.log(car2.getInfo());
+
+// object methods   
+let rectangle = {
+    width: 10,
+    height: 5,
+    area: function () {
+        return this.width * this.height;
+    },
+    perimeter: function () {
+        return 2 * (this.width + this.height);
+    }
+};
+
+console.log('Area: ' + rectangle.area());
+console.log('Perimeter: ' + rectangle.perimeter());
