@@ -1,0 +1,33 @@
+// Create a new element
+let newElement = document.createElement("div");
+newElement.className = "box";
+newElement.id = "box5";
+newElement.textContent = "Box 5";
+
+// Append the new element to the container
+let container = document.querySelector(".cont");
+container.appendChild(newElement);
+
+// Remove an existing element (Box 2)
+let box2 = document.getElementById("box2");
+if (box2) {
+  container.removeChild(box2);
+}
+
+// Insert a new element before Box 3
+let anotherNewElement = document.createElement("div");
+anotherNewElement.className = "box";
+anotherNewElement.id = "box1.5";
+anotherNewElement.textContent = "Box 1.5";
+
+let box3 = document.querySelector(".box:nth-child(3)");
+container.insertBefore(anotherNewElement, box3);
+
+// Replace Box 4 with a new element
+let replacementElement = document.createElement("div");
+replacementElement.className = "box";
+replacementElement.id = "box4-replacement";
+replacementElement.textContent = "Box 4 Replacement";
+
+let box4 = document.querySelector(".box:nth-child(4)");
+container.replaceChild(replacementElement, box4);
